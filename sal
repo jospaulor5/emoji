@@ -1,0 +1,17 @@
+from PIL import Image, ImageDraw
+
+def criar_emoji_salsicha():
+    # Criar uma imagem em branco com fundo transparente
+    largura, altura = 64, 64
+    emoji = Image.new("RGBA", (largura, altura), (255, 255, 255, 0))
+
+    # Desenhar uma salsicha (um retângulo castanho)
+    desenho = ImageDraw.Draw(emoji)
+    cor_salsicha = (156, 101, 63)  # Marrom
+    desenho.rectangle([(10, 20), (54, 44)], fill=cor_salsicha)
+
+    # Salvar o emoji criado
+    emoji.save("emoji_salsicha.png")
+
+if __name__ == "__main__":
+    criar_emoji_salsicha()
